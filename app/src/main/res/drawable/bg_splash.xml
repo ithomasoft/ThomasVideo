@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <!--背景色-->
+        <shape>
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+    <!--启动页Logo 放置位置-->
+    <item>
+        <bitmap
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_splash_logo_jrys" />
+    </item>
+</layer-list>

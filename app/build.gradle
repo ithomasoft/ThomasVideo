@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android["COMPILE_SDK_VERSION"]
+
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi-v7a'
+            universalApk false
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'video'
+            keyPassword '123456'
+            storeFile file('../thomas.jks')
+            storePassword '123456'
+        }
+        thomas {
+            keyAlias 'video'
+            keyPassword '123456'
+            storeFile file('../thomas.jks')
+            storePassword '123456'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.thomas.video"
+        minSdkVersion rootProject.ext.android["MIN_SDK_VERSION"]
+        targetSdkVersion rootProject.ext.android["TARGET_SDK_VERSION"]
+        versionCode rootProject.ext.app["VERSION_CODE"]
+        versionName rootProject.ext.app["VERSION_NAME"]
+        multiDexEnabled true
+        resConfigs "zh"
+        consumerProguardFiles 'proguard-rules.pro'
+        vectorDrawables.useSupportLibrary = true
+        flavorDimensions "versionCode"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            ext.enableCrashlytics = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.thomas
+        }
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    //core
+    implementation rootProject.ext.dependencies["appcompat"]
+    implementation rootProject.ext.dependencies["material"]
+    implementation rootProject.ext.dependencies["constraint-layout"]
+    implementation rootProject.ext.dependencies["viewpager"]
+    implementation rootProject.ext.dependencies["recyclerview"]
+    implementation rootProject.ext.dependencies["multidex"]
+    implementation rootProject.ext.dependencies["annotations"]
+    //util
+    implementation 'com.github.ithomasoft:base:1.1.0'
+    implementation 'com.github.ithomasoft:core:1.0.0'
+    implementation 'com.github.ithomasoft:update:1.1.0'
+    implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["luban"]
+    implementation rootProject.ext.dependencies["okhttp"]
+    implementation rootProject.ext.dependencies["logging-interceptor"]
+    implementation rootProject.ext.dependencies["retrofit"]
+    implementation rootProject.ext.dependencies["converter-scalars"]
+    implementation rootProject.ext.dependencies["fastjson"]
+    implementation rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    implementation 'com.aliyun.ams:alicloud-android-hotfix:3.2.15'
+    //ui
+    implementation 'com.youth.banner:banner:2.1.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'
+    implementation 'com.github.razerdp:BasePopup:2.2.8'
+    implementation 'com.github.lygttpod:SuperTextView:2.4.2'
+    implementation 'com.wuhenzhizao:titlebar:1.2.0'
+    implementation 'cn.jzvd:jiaozivideoplayer:7.5.0'
+    implementation 'com.google.android.exoplayer:exoplayer:2.12.0'
+    implementation 'com.aliyun.sdk.android:AliyunPlayer:5.1.6-full'
+    implementation 'com.alivc.conan:AlivcConan:1.0.4'
+
+}

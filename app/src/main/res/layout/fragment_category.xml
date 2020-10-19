@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_movie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@mipmap/icon_movie" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:text="电影"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/v2_icon_more_gray" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_teleplay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_movie">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@mipmap/icon_teleplay" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:text="电视"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/v2_icon_more_gray" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_variety"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_teleplay">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@mipmap/icon_variety" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:text="综艺"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/v2_icon_more_gray" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_comic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_variety">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@mipmap/icon_comic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:text="动漫"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/v2_icon_more_gray" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_six_room"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_comic">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@mipmap/icon_six_room" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:text="福利"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/v2_icon_more_gray" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_record"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_six_room">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@mipmap/icon_record" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:text="解说"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/v2_icon_more_gray" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_record">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@mipmap/icon_american" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:text="直播"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/v2_icon_more_gray" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

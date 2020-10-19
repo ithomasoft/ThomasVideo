@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_history"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:drawableTop="@mipmap/v2_icon_history"
+                android:drawablePadding="4dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingTop="32dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="32dp"
+                android:text="历史" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_download"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:drawableTop="@mipmap/v2_icon_download_h"
+                android:drawablePadding="4dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingTop="32dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="32dp"
+                android:text="下载" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_favorites"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:drawableTop="@mipmap/v2_icon_favor_c"
+                android:drawablePadding="4dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingTop="32dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="32dp"
+                android:text="收藏" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:divider="@color/colorLine"
+            app:dividerPadding="16dp"
+            app:showDividers="middle">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:text="设置中心" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:text="应用推荐" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_disclaimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:text="免责声明" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_authority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:text="隐私权限" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:text="意见反馈" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:text="关于我们" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_open"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:text="开源项目" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:text="告诉伙伴" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
