@@ -43,7 +43,7 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled true
             ext.enableCrashlytics = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.thomas
@@ -73,7 +73,7 @@ dependencies {
     implementation rootProject.ext.dependencies["annotations"]
     //util
     implementation 'com.github.ithomasoft:base:1.1.0'
-    implementation 'com.github.ithomasoft:core:1.0.0'
+    implementation 'com.github.ithomasoft:core:1.0.1'
     implementation 'com.github.ithomasoft:update:1.1.0'
     implementation rootProject.ext.dependencies["glide"]
     implementation rootProject.ext.dependencies["luban"]

@@ -193,6 +193,11 @@ public class TopicActivity extends AbstractMvpActivity<TopicPresenter> implement
         } else {
             tabType.setVisibility(View.GONE);
         }
+        if (categoryList.size() > 4) {
+            tabType.setTabMode(TabLayout.MODE_SCROLLABLE);
+        } else {
+            tabType.setTabMode(TabLayout.MODE_FIXED);
+        }
         for (int i = 0; i < categoryList.size(); i++) {
             tabType.addTab(tabType.newTab().setText(categoryList.get(i).getTypeName()));
         }

@@ -1,11 +1,11 @@
 {
-  "version": 1,
+  "version": 2,
   "artifactType": {
     "type": "APK",
     "kind": "Directory"
   },
   "applicationId": "com.thomas.video",
-  "variantName": "release",
+  "variantName": "processReleaseResources",
   "elements": [
     {
       "type": "ONE_OF_MANY",
@@ -15,10 +15,8 @@
           "value": "armeabi-v7a"
         }
       ],
-      "properties": [],
       "versionCode": 1,
       "versionName": "1.0.0",
-      "enabled": true,
       "outputFile": "app-armeabi-v7a-release.apk"
     }
   ]

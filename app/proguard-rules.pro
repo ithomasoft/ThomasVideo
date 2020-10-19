@@ -24,7 +24,8 @@
 -keep public class cn.jzvd.JZMediaSystem {*; }
 -keep public class com.thomas.video.media.ExoMedia {*; }
 -keep public class com.thomas.video.media.AliMedia {*; }
-
+-keep public class com.thomas.video.widget.LiveVideo{*;}
+-keep public class com.thomas.video.widget.SuperVideo{*;}
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep class * extends com.bumptech.glide.module.AppGlideModule {
  <init>(...);
