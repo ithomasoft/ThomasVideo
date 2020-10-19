@@ -145,7 +145,7 @@ public class LiveActivity extends AbstractActivity implements ScreenRotateUtils.
     private void playLive(LiveData liveData) {
         titleBar.getCenterTextView().setText(liveData.getTitle());
         mJzDataSource = new JZDataSource(liveData.getPlayUrl(), liveData.getTitle());
-        player.setUp(mJzDataSource, JzvdStd.SCREEN_NORMAL, ExoMedia.class);
+        player.setUp(mJzDataSource, JzvdStd.SCREEN_NORMAL);
         player.startVideo();
     }
 
