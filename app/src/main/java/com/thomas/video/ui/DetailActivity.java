@@ -185,7 +185,6 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
                 EpisodeData entity = episodes.get(tab.getPosition());
                 mJzDataSource = new JZDataSource(entity.getVideoUrl(), data.getVod_name() + " " + entity.getVideoName());
                 updateTabView(tab, true);
-                videoEpisodePopup.setPlayNum(tab.getPosition());
                 playChangeUrl();
                 isNext(tab.getPosition());
             }
@@ -275,7 +274,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
             videoEpisodePopup = new VideoEpisodePopup(this, episodes);
             videoEpisodePopup.setEpisondeClickListener(this);
         }
-        videoEpisodePopup.setPlayNum(tabEpisode.getSelectedTabPosition());
+        videoEpisodePopup.setPlayNum(tabEpisode.getSelectedTabPosition()+1);
         videoEpisodePopup.showAtLocation(getWindow().getDecorView(), Gravity.RIGHT, 0, 0);
     }
 

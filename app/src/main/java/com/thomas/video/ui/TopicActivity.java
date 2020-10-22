@@ -17,6 +17,7 @@ import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
 import com.thomas.core.ActivityUtils;
+import com.thomas.core.ToastUtils;
 import com.thomas.video.R;
 import com.thomas.video.adapter.ResultAdapter;
 import com.thomas.video.core.AbstractMvpActivity;
@@ -87,6 +88,10 @@ public class TopicActivity extends AbstractMvpActivity<TopicPresenter> implement
             public void onClicked(View v, int action, String extra) {
                 if (action == CommonTitleBar.ACTION_LEFT_BUTTON) {
                     ActivityUtils.finishActivity(mActivity, true);
+                    return;
+                }
+                if (action == CommonTitleBar.ACTION_RIGHT_TEXT) {
+                    ToastUtils.showShort("搜索");
                 }
             }
         });

@@ -15,6 +15,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:leftImageResource="@mipmap/v2_icon_back_white"
         app:leftType="imageButton"
+        app:rightType="textView"
+        app:rightText="搜索"
         app:showBottomLine="false"
         app:statusBarColor="@color/colorPrimaryDark"
         app:statusBarMode="light"

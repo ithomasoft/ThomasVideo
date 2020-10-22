@@ -78,7 +78,7 @@ public class MineFragment extends AbstractLazyFragment {
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState, @Nullable View contentView) {
-        applyThomasClickScaleListener(btnHistory, btnDownload, btnFavorites,
+        applyThomasClickListener(btnHistory, btnDownload, btnFavorites,
                 btnSettings, btnRecommend, btnDisclaimer, btnAuthority,
                 btnFeedback, btnAbout, btnOpen, btnShare);
     }
