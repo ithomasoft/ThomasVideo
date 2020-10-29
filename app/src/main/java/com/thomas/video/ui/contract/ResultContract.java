@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ResultContract {
     interface Model extends IBaseMvpModel {
-        void getResult(int pageNo, String wd, RetrofitCallback callback);
+        void getResult(int pageNo,String type, String wd, RetrofitCallback callback);
     }
 
     interface View extends IBaseMvpView {
@@ -21,6 +21,6 @@ public interface ResultContract {
     }
 
     interface Presenter {
-        void getResult(int pageNo, String wd);
+        void getResult(int pageNo, String type, String wd);
     }
 }

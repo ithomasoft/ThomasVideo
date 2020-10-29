@@ -7,8 +7,8 @@ import com.thomas.video.ui.contract.ResultContract;
 
 public class ResultModel implements ResultContract.Model {
     @Override
-    public void getResult(int pageNo, String wd, RetrofitCallback callback) {
+    public void getResult(int pageNo, String type, String wd, RetrofitCallback callback) {
         RetrofitFactory.createApi(OKService.class)
-                .getDetail(null, pageNo, wd, null).enqueue(callback);
+                .getDetail(type, pageNo, wd, null).enqueue(callback);
     }
 }

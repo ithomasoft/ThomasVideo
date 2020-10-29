@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:hint="搜你想看的(仅支持影片名称搜索)"
+            android:hint="搜你想看的(仅支持名称搜索)"
             android:imeOptions="actionSearch"
             android:padding="16dp"
             android:singleLine="true"

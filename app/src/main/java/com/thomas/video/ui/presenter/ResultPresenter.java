@@ -14,8 +14,8 @@ public class ResultPresenter extends BaseMvpPresenter<ResultContract.Model, Resu
     }
 
     @Override
-    public void getResult(int pageNo, String wd) {
-        getModel().getResult(pageNo, wd, new RetrofitCallback() {
+    public void getResult(int pageNo, String type, String wd) {
+        getModel().getResult(pageNo, type, wd, new RetrofitCallback() {
             @Override
             protected void onSuccess(String succeed) {
                 if (isViewAttached()) {

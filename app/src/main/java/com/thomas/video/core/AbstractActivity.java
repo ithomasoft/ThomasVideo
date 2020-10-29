@@ -1,6 +1,5 @@
 package com.thomas.video.core;
 
-import android.content.res.Configuration;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -9,11 +8,13 @@ import androidx.appcompat.app.AppCompatDelegate;
 import com.thomas.base.ui.BaseActivity;
 import com.thomas.core.BarUtils;
 import com.thomas.core.ColorUtils;
+import com.thomas.video.widget.EmptyView;
 
 import butterknife.ButterKnife;
 
 public abstract class AbstractActivity extends BaseActivity {
 
+    protected EmptyView emptyView;
 
     @Override
     public void setContentView() {
