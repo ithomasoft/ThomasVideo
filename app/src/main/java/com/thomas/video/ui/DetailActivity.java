@@ -22,7 +22,6 @@ import com.thomas.video.adapter.PersonAdapter;
 import com.thomas.video.core.AbstractActivity;
 import com.thomas.video.data.EpisodeData;
 import com.thomas.video.data.OKData;
-import com.thomas.video.media.ExoMedia;
 import com.thomas.video.widget.BottomSheet;
 import com.thomas.video.widget.ScreenRotateUtils;
 import com.thomas.video.widget.SuperVideo;
@@ -238,7 +237,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
     @Override
     public void doBusiness() {
         mJzDataSource = new JZDataSource(episodes.get(0).getVideoUrl(), data.getVod_name() + " " + episodes.get(0).getVideoName());
-        player.setUp(mJzDataSource, JzvdStd.SCREEN_NORMAL, ExoMedia.class);
+        player.setUp(mJzDataSource, JzvdStd.SCREEN_NORMAL);
         player.startVideo();
     }
 

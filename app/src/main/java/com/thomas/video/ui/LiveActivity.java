@@ -16,7 +16,6 @@ import com.thomas.video.R;
 import com.thomas.video.adapter.LiveAdapter;
 import com.thomas.video.core.AbstractActivity;
 import com.thomas.video.data.LiveData;
-import com.thomas.video.media.ExoMedia;
 import com.thomas.video.widget.FooterView;
 import com.thomas.video.widget.LiveVideo;
 import com.thomas.video.widget.ScreenRotateUtils;

@@ -95,8 +95,4 @@ dependencies {
     implementation 'com.github.lygttpod:SuperTextView:2.4.2'
     implementation 'com.wuhenzhizao:titlebar:1.2.0'
     implementation 'cn.jzvd:jiaozivideoplayer:7.5.0'
-    implementation 'com.google.android.exoplayer:exoplayer:2.12.0'
-    implementation 'com.aliyun.sdk.android:AliyunPlayer:5.1.6-full'
-    implementation 'com.alivc.conan:AlivcConan:1.0.4'
-
 }
