@@ -90,7 +90,7 @@ public class TopicActivity extends AbstractMvpActivity<TopicPresenter> implement
                     ActivityUtils.finishActivity(mActivity, true);
                     return;
                 }
-                if (action == CommonTitleBar.ACTION_RIGHT_TEXT) {
+                if (action == CommonTitleBar.ACTION_RIGHT_BUTTON) {
                     ToastUtils.showShort("搜索");
                 }
             }
@@ -101,6 +101,7 @@ public class TopicActivity extends AbstractMvpActivity<TopicPresenter> implement
             public void onTabSelected(TabLayout.Tab tab) {
                 pageNo = 1;
                 currentType = categoryList.get(tab.getPosition()).getTypeId();
+                rvContent.scrollToPosition(0);
                 smartRefreshLayout.autoRefresh();
                 presenter.getResult(pageNo, currentType, "");
             }

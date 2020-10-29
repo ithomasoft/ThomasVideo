@@ -27,20 +27,40 @@
             android:textSize="14sp" />
     </com.google.android.material.card.MaterialCardView>
 
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:paddingStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_search"
+        app:sCenterTextColor="@color/colorText"
+        app:sCenterTextSize="12sp"
+        app:sCenterTextString="(长按删除记录)"
+        app:sCenterViewGravity="left_center"
+        app:sDividerLineType="none"
+        app:sLeftTextColor="@color/colorTitle"
+        app:sLeftTextGravity="center"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="搜索记录"
+        app:sLeftTvDrawableHeight="20dp"
+        app:sLeftTvDrawableLeft="@color/colorAccent"
+        app:sLeftTvDrawableWidth="8dp"
+        app:sRightTextColor="@color/colorAccent"
+        app:sRightTextSize="14sp"
+        app:sRightTextString="删除全部"
+        app:sUseRipple="false" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_history"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_search" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_new"
-        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_history" />
+        app:layout_constraintTop_toBottomOf="@id/stv_title" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

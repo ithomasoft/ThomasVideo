@@ -162,7 +162,7 @@ public class OKData {
          * type_name : 电影解说
          */
 
-        private int vod_id;
+        private long vod_id;
         private int type_id;
         private int type_id_1;
         private int group_id;
@@ -242,11 +242,11 @@ public class OKData {
         private String vod_down_url;
         private String type_name;
 
-        public int getVod_id() {
+        public long getVod_id() {
             return vod_id;
         }
 
-        public void setVod_id(int vod_id) {
+        public void setVod_id(long vod_id) {
             this.vod_id = vod_id;
         }
 

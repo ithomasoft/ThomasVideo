@@ -10,6 +10,8 @@ import com.thomas.core.AppUtils;
 import com.thomas.core.LogUtils;
 import com.thomas.video.net.RetrofitFactory;
 
+import org.litepal.LitePal;
+
 import java.util.ArrayList;
 
 public class ThomasApplication extends BaseApplication {
@@ -89,6 +91,7 @@ public class ThomasApplication extends BaseApplication {
 
     @Override
     protected void initExpands() {
+        LitePal.initialize(this);
 //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
 }
