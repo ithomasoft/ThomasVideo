@@ -13,6 +13,7 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.android.material.tabs.TabLayout;
 import com.thomas.core.BarUtils;
 import com.thomas.core.ColorUtils;
@@ -111,9 +112,9 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
         } else {
             llGuide.setVisibility(View.VISIBLE);
             guideAdapter = new PersonAdapter();
-            rvGuide.setLayoutManager(new LinearLayoutManager(mActivity, RecyclerView.HORIZONTAL, false));
+            rvGuide.setLayoutManager(new FlexboxLayoutManager(mActivity));
             rvGuide.setAdapter(guideAdapter);
-            guideAdapter.setNewInstance(Arrays.asList(data.getVod_director().split(",")));
+            guideAdapter.setNewInstance(Arrays.asList(data.getVod_director().replace(",,",",").split(",")));
         }
 
         if (TextUtils.isEmpty(data.getVod_actor())) {
@@ -121,9 +122,9 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
         } else {
             llActor.setVisibility(View.VISIBLE);
             actorAdapter = new PersonAdapter();
-            rvActor.setLayoutManager(new LinearLayoutManager(mActivity, RecyclerView.HORIZONTAL, false));
+            rvActor.setLayoutManager(new FlexboxLayoutManager(mActivity));
             rvActor.setAdapter(actorAdapter);
-            actorAdapter.setNewInstance(Arrays.asList(data.getVod_actor().split(",")));
+            actorAdapter.setNewInstance(Arrays.asList(data.getVod_actor().replace(",,",",").split(",")));
         }
 
 //        if (guideAdapter != null) {
@@ -273,7 +274,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
             videoEpisodePopup = new VideoEpisodePopup(this, episodes);
             videoEpisodePopup.setEpisondeClickListener(this);
         }
-        videoEpisodePopup.setPlayNum(tabEpisode.getSelectedTabPosition()+1);
+        videoEpisodePopup.setPlayNum(tabEpisode.getSelectedTabPosition() + 1);
         videoEpisodePopup.showAtLocation(getWindow().getDecorView(), Gravity.RIGHT, 0, 0);
     }
 

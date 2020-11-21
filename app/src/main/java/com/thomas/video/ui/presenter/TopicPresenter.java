@@ -22,11 +22,16 @@ public class TopicPresenter extends BaseMvpPresenter<TopicContract.Model, TopicC
                 if (isViewAttached()) {
                     String result = succeed.replace("$", "@");
                     OKData data = JSONObject.parseObject(result, OKData.class);
-                    getView().hasMoreData(data.getPage() < data.getPagecount());
-                    if (data.getList() != null && data.getList().size() > 0) {
-                        getView().getDataSuccess(data.getList());
+
+                    if (data != null) {
+                        getView().hasMoreData(data.getPage() < data.getPagecount());
+                        if (data.getList() != null && data.getList().size() > 0) {
+                            getView().getDataSuccess(data.getList());
+                        } else {
+                            getView().getDataEmpty();
+                        }
                     } else {
-                        getView().getDataEmpty();
+                        getView().onFailed(0, "数据异常，请稍后重试");
                     }
                 }
 

@@ -21,12 +21,17 @@ public class ResultPresenter extends BaseMvpPresenter<ResultContract.Model, Resu
                 if (isViewAttached()) {
                     String result = succeed.replace("$", "@");
                     OKData data = JSONObject.parseObject(result, OKData.class);
-                    getView().hasMoreData(data.getPage() < data.getPagecount());
-                    if (data.getList() != null && data.getList().size() > 0) {
-                        getView().getDataSuccess(data.getList());
-                    } else {
-                        getView().getDataEmpty();
+                    if (data!=null){
+                        getView().hasMoreData(data.getPage() < data.getPagecount());
+                        if (data.getList() != null && data.getList().size() > 0) {
+                            getView().getDataSuccess(data.getList());
+                        } else {
+                            getView().getDataEmpty();
+                        }
+                    }else {
+                        getView().onFailed(0, "数据异常，请稍后重试");
                     }
+
                 }
 
 
