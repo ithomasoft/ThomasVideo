@@ -3,6 +3,7 @@ package com.thomas.video.ui.contract;
 import com.thomas.base.mvp.IBaseMvpModel;
 import com.thomas.base.mvp.IBaseMvpView;
 import com.thomas.video.data.OKData;
+import com.thomas.video.data.VideoData;
 import com.thomas.video.net.RetrofitCallback;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public interface TopicContract {
     }
 
     interface View extends IBaseMvpView {
-        void getDataSuccess(List<OKData.ListBean> succeed);
+        void getDataSuccess(List<VideoData> succeed);
 
         void getDataEmpty();
 

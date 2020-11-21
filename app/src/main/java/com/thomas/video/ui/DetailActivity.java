@@ -10,11 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.android.material.tabs.TabLayout;
+import com.thomas.core.ActivityUtils;
 import com.thomas.core.BarUtils;
 import com.thomas.core.ColorUtils;
 import com.thomas.core.ToastUtils;
@@ -22,7 +22,7 @@ import com.thomas.video.R;
 import com.thomas.video.adapter.PersonAdapter;
 import com.thomas.video.core.AbstractActivity;
 import com.thomas.video.data.EpisodeData;
-import com.thomas.video.data.OKData;
+import com.thomas.video.data.VideoData;
 import com.thomas.video.widget.BottomSheet;
 import com.thomas.video.widget.ScreenRotateUtils;
 import com.thomas.video.widget.SuperVideo;
@@ -71,11 +71,10 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
 
 
     private JZDataSource mJzDataSource;
-    private OKData.ListBean data;
+    private VideoData data;
     private List<EpisodeData> episodes = new ArrayList<>();
 
-    private int playingPosition = 0;
-
+    private int playingPosition;
     private PersonAdapter guideAdapter, actorAdapter;
 
     @Override
@@ -85,7 +84,18 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
 
     @Override
     public void initData(@Nullable Bundle bundle) {
-        data = (OKData.ListBean) bundle.getSerializable("data");
+        data = (VideoData) bundle.getSerializable("data");
+//        historyData = LitePal.where("videoId=?", data.getVod_id() + "").findFirst(VideoHistoryData.class);
+//        if (historyData != null) {
+//            playingPosition = historyData.getPosition();
+//        } else {
+//            historyData =new VideoHistoryData();
+//            historyData.setTitle(data.getVod_name());
+//            historyData.setVideoId(data.getVod_id()+"");
+//            historyData.set
+//            playingPosition = 0;
+//        }
+
     }
 
     @Override
@@ -114,7 +124,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
             guideAdapter = new PersonAdapter();
             rvGuide.setLayoutManager(new FlexboxLayoutManager(mActivity));
             rvGuide.setAdapter(guideAdapter);
-            guideAdapter.setNewInstance(Arrays.asList(data.getVod_director().replace(",,",",").split(",")));
+            guideAdapter.setNewInstance(Arrays.asList(data.getVod_director().replace(",,", ",").split(",")));
         }
 
         if (TextUtils.isEmpty(data.getVod_actor())) {
@@ -124,7 +134,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
             actorAdapter = new PersonAdapter();
             rvActor.setLayoutManager(new FlexboxLayoutManager(mActivity));
             rvActor.setAdapter(actorAdapter);
-            actorAdapter.setNewInstance(Arrays.asList(data.getVod_actor().replace(",,",",").split(",")));
+            actorAdapter.setNewInstance(Arrays.asList(data.getVod_actor().replace(",,", ",").split(",")));
         }
 
 //        if (guideAdapter != null) {
@@ -246,6 +256,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
     public void nextClick() {
         int position = tabEpisode.getSelectedTabPosition() + 1;
         EpisodeData entity = episodes.get(position);
+
         mJzDataSource = new JZDataSource(entity.getVideoUrl(), data.getVod_name() + " " + entity.getVideoName());
         TabLayout.Tab tab = tabEpisode.getTabAt(position);
         if (tab != null) {
@@ -259,7 +270,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
             dismissSpeedPopAndEpisodePop();
             SuperVideo.backPress();
         } else {
-            finish();
+            ActivityUtils.finishActivity(mActivity);
         }
     }
 

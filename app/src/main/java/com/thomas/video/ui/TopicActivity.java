@@ -24,6 +24,7 @@ import com.thomas.video.adapter.ResultAdapter;
 import com.thomas.video.core.AbstractMvpActivity;
 import com.thomas.video.data.CategoryData;
 import com.thomas.video.data.OKData;
+import com.thomas.video.data.VideoData;
 import com.thomas.video.helper.DataHelper;
 import com.thomas.video.helper.LoadingHelper;
 import com.thomas.video.ui.contract.TopicContract;
@@ -232,7 +233,7 @@ public class TopicActivity extends AbstractMvpActivity<TopicPresenter> implement
     }
 
     @Override
-    public void getDataSuccess(List<OKData.ListBean> succeed) {
+    public void getDataSuccess(List<VideoData> succeed) {
         mAdapter.setUseEmpty(false);
         if (pageNo == 1) {
             mAdapter.getData().clear();

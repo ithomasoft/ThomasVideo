@@ -32,9 +32,7 @@
     -->
     <list>
         <mapping class="com.thomas.video.data.SearchHistoryData" />
-        <mapping class="com.thomas.video.data.VideoHistoryData" />
-        <mapping class="com.thomas.video.data.VideoFavoritesData" />
-
+        <mapping class="com.thomas.video.data.VideoData" />
 
         <!-- <mapping class="com.litepaltest.model.Classroom" />
               <mapping class="com.litepaltest.model.Teacher" />

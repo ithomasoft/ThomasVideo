@@ -8,17 +8,17 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.thomas.video.R;
-import com.thomas.video.data.OKData;
+import com.thomas.video.data.VideoData;
 
 import org.jetbrains.annotations.NotNull;
 
-public class ResultAdapter extends BaseQuickAdapter<OKData.ListBean, BaseViewHolder> {
+public class ResultAdapter extends BaseQuickAdapter<VideoData, BaseViewHolder> {
     public ResultAdapter() {
         super(R.layout.item_result);
     }
 
     @Override
-    protected void convert(@NotNull BaseViewHolder baseViewHolder, OKData.ListBean listBean) {
+    protected void convert(@NotNull BaseViewHolder baseViewHolder, VideoData listBean) {
         baseViewHolder.setVisible(R.id.ll_type_record, listBean.getType_id() == 36 || listBean.getType_id() == 34);
         baseViewHolder.setGone(R.id.ll_type_video, listBean.getType_id() == 36 || listBean.getType_id() == 34);
         if (listBean.getType_id() == 36 || listBean.getType_id() == 34) {
