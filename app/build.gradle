@@ -4,14 +4,14 @@ android {
     compileSdkVersion rootProject.ext.android["COMPILE_SDK_VERSION"]
 
 
-//    splits {
-//        abi {
-//            enable true
-//            reset()
-//            include 'armeabi-v7a'
-//            universalApk false
-//        }
-//    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi-v7a'
+            universalApk false
+        }
+    }
 
     signingConfigs {
         release {
