@@ -24,6 +24,8 @@ import com.thomas.video.ui.presenter.ResultPresenter;
 import com.thomas.video.widget.EmptyView;
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar;
 
+import org.litepal.LitePal;
+
 import java.util.List;
 
 import butterknife.BindView;

@@ -1,10 +1,8 @@
 package com.thomas.video.data;
 
-import org.litepal.crud.LitePalSupport;
-
 import java.io.Serializable;
 
-public class VideoData extends LitePalSupport implements Serializable {
+public class VideoData implements Serializable {
     /**
      * vod_id : 60303
      * type_id : 36
@@ -166,6 +164,25 @@ public class VideoData extends LitePalSupport implements Serializable {
     private String vod_down_note;
     private String vod_down_url;
     private String type_name;
+
+    private int position;
+    private boolean favorite;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 
     public long getVod_id() {
         return vod_id;

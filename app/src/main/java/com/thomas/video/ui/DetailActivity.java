@@ -74,7 +74,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
     private VideoData data;
     private List<EpisodeData> episodes = new ArrayList<>();
 
-    private int playingPosition;
+    private int playingPosition=0;
     private PersonAdapter guideAdapter, actorAdapter;
 
     @Override
@@ -85,17 +85,6 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
     @Override
     public void initData(@Nullable Bundle bundle) {
         data = (VideoData) bundle.getSerializable("data");
-//        historyData = LitePal.where("videoId=?", data.getVod_id() + "").findFirst(VideoHistoryData.class);
-//        if (historyData != null) {
-//            playingPosition = historyData.getPosition();
-//        } else {
-//            historyData =new VideoHistoryData();
-//            historyData.setTitle(data.getVod_name());
-//            historyData.setVideoId(data.getVod_id()+"");
-//            historyData.set
-//            playingPosition = 0;
-//        }
-
     }
 
     @Override
@@ -193,6 +182,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
             public void onTabSelected(TabLayout.Tab tab) {
                 //定义方法，判断是否选中
                 EpisodeData entity = episodes.get(tab.getPosition());
+                data.setPosition(tab.getPosition());
                 mJzDataSource = new JZDataSource(entity.getVideoUrl(), data.getVod_name() + " " + entity.getVideoName());
                 updateTabView(tab, true);
                 playChangeUrl();
@@ -256,7 +246,7 @@ public class DetailActivity extends AbstractActivity implements SuperVideo.Super
     public void nextClick() {
         int position = tabEpisode.getSelectedTabPosition() + 1;
         EpisodeData entity = episodes.get(position);
-
+        data.setPosition(position);
         mJzDataSource = new JZDataSource(entity.getVideoUrl(), data.getVod_name() + " " + entity.getVideoName());
         TabLayout.Tab tab = tabEpisode.getTabAt(position);
         if (tab != null) {

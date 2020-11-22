@@ -72,41 +72,28 @@ public class VideoEpisodePopup extends PopupWindow {
         episodeAdapter = new VideoEpisodeAdapter();
         episodeRecycler.setAdapter(episodeAdapter);
         episodeAdapter.setNewInstance(episodeList);
-        episodeAdapter.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
-                if (episondeClickListener != null) {
-                    episondeClickListener.onEpisodeClickListener(episodeList.get(position), position);
-                }
-                //更换当前正在播放的集数
-                if (playNum < 1) {
-                    playNum = 1;
-                }
-                episodeList.get(playNum - 1).setPlay(false);
-                playNum = position + 1;
-                episodeList.get(playNum - 1).setPlay(true);
-                episodeAdapter.notifyDataSetChanged();
+        episodeAdapter.setOnItemClickListener((adapter, view, position) -> {
+            if (episondeClickListener != null) {
+                episondeClickListener.onEpisodeClickListener(episodeList.get(position), position);
             }
+            //更换当前正在播放的集数
+            if (playNum < 1) {
+                playNum = 1;
+            }
+            episodeList.get(playNum - 1).setPlay(false);
+            playNum = position + 1;
+            episodeList.get(playNum - 1).setPlay(true);
+            episodeAdapter.notifyDataSetChanged();
         });
 
-        main.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                startDismissTimer();
-                return false;
-            }
+        main.setOnTouchListener((v, event) -> {
+            startDismissTimer();
+            return false;
         });
-        episodeRecycler.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                startDismissTimer();
-                return false;
-            }
+        episodeRecycler.setOnTouchListener((v, event) -> {
+            startDismissTimer();
+            return false;
         });
-    }
-
-    public EpisodeClickListener getEpisondeClickListener() {
-        return episondeClickListener;
     }
 
     public void setEpisondeClickListener(EpisodeClickListener episondeClickListener) {
